@@ -13,7 +13,8 @@
 enum PrintMode
 {
     IMMEDIATE,
-    STEP
+    STEP,
+    MINIMAL
 };
 
 typedef struct InstructionData {
@@ -105,6 +106,10 @@ void parseArgs(int argc, char** argv, uint8_t** out_flagArgvIndices, uint8_t** o
             if (_stricmp(argv[i] + 1, "step") == 0)
             {
                 *printMode = STEP;
+            }
+			else if (_stricmp(argv[i] + 1, "min") == 0)
+            {
+                *printMode = MINIMAL;
             }
             flagArgvIndices[flagCount++] = (uint8_t)i;
         }
@@ -318,6 +323,8 @@ void printModed(unsigned char* buffer, long bufferSize, char* file, enum PrintMo
         }
         break;
     }
+	case MINIMAL:
+		break;
     default:
         break;
     }
