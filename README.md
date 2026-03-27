@@ -183,4 +183,4 @@ Decoder correctness was verified through round-trip assembly:
 3. Feed resulting binary back into the decoder
 4. Confirm identical decoded output
 
-This ensures the decoder outputs structurally correct and reversible instructions.
+This ensures the decoder produces structurally correct and reversible instruction sequences.
